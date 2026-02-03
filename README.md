@@ -9,8 +9,11 @@ My target was not to keep the source code as small as possible. I wanted to crea
 
 The next projects will show, how helpful the theme really is. &#128512;
 
+Of course, this theme can also be used by people who are not developers!
+
 ## Before installation
-Warning: I did not create the files for a wiki installation! This theme is unsuitable for a wiki installation!
+* Warning: I did not create the files for a wiki installation! This theme is unsuitable for a wiki installation!
+* Please backup your page before installing this theme.
 
 ## How to install an extension
 Download ZIP file and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update)

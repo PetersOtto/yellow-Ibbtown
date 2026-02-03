@@ -23,7 +23,7 @@ Currently, a placeholder image is being used as the Opengraph image. You should 
 
 ## Acknowledgements
 * Thank you [Datenstrom](https://datenstrom.se/de/) for the great »Yellow CMS«!
-* Danke Karsten für die Donot Bilder!
+* Danke Karsten für die Donots Bilder!
 * Danke für das Foto von <a href="https://unsplash.com/de/@beccatapert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Becca Tapert</a> auf <a href="https://unsplash.com/de/fotos/frau-in-schwarzer-lederjacke-und-grauer-hose-tagsuber-auf-grunem-rasen-bmOtCRZndE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 * Thanks for the lovley [Font (Inter)](https://rsms.me/inter/)!
 * Thanks for the great [Monotype](https://www.ibm.com/plex/)!

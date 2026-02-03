@@ -1,0 +1,92 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// tagnavi on blog-start Layout - 001
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Color
+$blog-start-dark-color: $dark;
+$blog-start-light-color: $light;
+
+// Navbar Color
+$tagnavi-color: $navbar-color;
+$tagnavi-bg-color: $navbar-bg-color;
+$tagnavi-hover-color: $navbar-hover-color;
+$tagnavi-hover-bg-color: $navbar-hover-bg-color;
+
+// Navbar Font
+$tagnavi-font-family-desktop: $navbar-font-family-desktop;
+$tagnavi-font-size-desktop: $navbar-font-size-desktop;
+$tagnavi-font-weight-desktop: 400;
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// tagnavi on blog-start Layout - 001
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.tagnavi {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include lg-up {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+
+        span {
+            padding: 6px 8px;
+            border-radius: 0 50rem 50rem 0;
+            border: solid 2px;
+            border-left: none;
+            display: inline-block;
+            cursor: pointer;
+            color: $navbar-color;
+            background-color: $tagnavi-bg-color;
+            font-family: $tagnavi-font-family-desktop;
+            font-size: $tagnavi-font-size-desktop;
+            font-weight: $tagnavi-font-weight-desktop;
+            margin: 0.5rem 0.5rem 0 0rem;
+
+            @include lg-up {
+                margin: 0.5rem 0 0 0;
+            }
+        }
+
+        a {
+            padding: 6px 8px;
+            border-radius: 50rem 0 0 50rem;
+            border: solid 2px;
+            display: inline-block;
+            cursor: pointer;
+
+            @include lg-up {
+                margin: 0.5rem 0 0 0.5rem;
+            }
+
+            color: $tagnavi-color;
+            background-color: $tagnavi-bg-color;
+            font-family: $tagnavi-font-family-desktop;
+            font-size: $tagnavi-font-size-desktop;
+            font-weight: $tagnavi-font-weight-desktop;
+
+            &:link,
+            &:visited {
+                color: $tagnavi-color;
+                background-color: $tagnavi-bg-color;
+                text-decoration: none;
+            }
+
+            &.active,
+            &:hover {
+                text-decoration: none;
+                color: $tagnavi-hover-color;
+                background-color: $tagnavi-hover-bg-color;
+                border-color: $tagnavi-hover-bg-color;
+            }
+        }
+    }
+}

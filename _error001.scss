@@ -1,0 +1,20 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Error - 001
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Spacing
+$error-start-spacing-top: 12rem;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Error - 001
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.layout-error{
+    margin-top: $error-start-spacing-top;
+    margin-bottom: $error-start-spacing-top;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

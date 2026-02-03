@@ -1,0 +1,354 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Markdown (001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ---------- Variable ----------
+
+// Color
+$markdown-color-text: $dark;
+//$markdown-color-muted: lighten($dark, 40%);
+$markdown-color-muted: $dark;
+$markdown-color-bg: $light;
+$markdown-color-border: $dark;
+$markdown-color-link: $dark;
+$markdown-color-code-text: $light;
+$markdown-color-code-bg: $dark;
+$markdown-color-blockquote-bg: $light;
+
+//Font
+$markdown-font-family: $font-family-main;
+$markdown-font-family-code: $font-family-code;
+$markdown-font-family-heading: $font-family-heading;
+$markdown-font-size: $font-size-base;
+$markdown-font-weight: $font-weight-base;
+$markdown-line-height: $line-height-base;
+$markdown-font-weight-bold: $font-weight-bold;
+
+//Border
+$markdown-border-radius: 10px;
+
+// Spacing
+$markdown-spacing: $container-spacing;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Markdown (001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ---------- Root Container ----------
+.markdown {
+    font-family: $markdown-font-family;
+    color: $markdown-color-text;
+    background: $markdown-color-bg;
+    line-height: $markdown-line-height;
+    font-size: $font-size-base;
+
+    // ---------- Headings ----------
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font-family-heading;
+        font-weight: $font-weight-base;
+        line-height: $line-height-heading;
+        margin-bottom: 0;
+        //margin-top: clamp(1rem, 3.5vw, 2rem);
+        margin-top: $markdown-spacing * 2;
+
+        @include lg-up {
+            margin-left: -5rem;
+        }
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    h4 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    h5 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    h6 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+
+    // ---------- Text ----------
+    p {
+        margin-top: $markdown-spacing * 2;
+    }
+
+    strong {
+        font-weight: 400;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    del {
+        text-decoration: line-through;
+        color: $markdown-color-muted;
+    }
+
+    // ---------- Links ----------
+    a {
+        @include link-dark-main-text;
+        color: $markdown-color-text;
+        word-break: break-all;
+    }
+
+    // ---------- Lists ----------
+    ul,
+    ol {
+        margin: ($markdown-spacing * 2) 0 ($markdown-spacing * 2) ($markdown-spacing * 2);
+        padding: 0;
+
+        &:only-child {
+            margin: ($markdown-spacing * 0.5) 0 ($markdown-spacing * 0.5) ($markdown-spacing * 2);
+        }
+    }
+
+    li {
+        font-weight: $markdown-font-weight;
+        margin: ($markdown-spacing * 0.5) 0;
+
+        p {
+            margin: $markdown-spacing 0;
+        }
+    }
+
+    // ---------- Blockquote ----------
+
+
+    blockquote {
+        padding: ($markdown-spacing * 2);
+        margin: ($markdown-spacing * 2) 0;
+        border-left: 1px solid $markdown-color-text;
+
+        p {
+            margin: 0;
+            font-style: italic;
+
+            &::before {
+                content: "»";
+            }
+
+            &::after {
+                content: "«";
+            }
+        }
+    }
+
+    // Code & pre
+    // Scrollbar: Works on Firefox
+    pre {
+        scrollbar-width: thin;
+        scrollbar-color: $markdown-color-code-text $markdown-color-code-text;
+    }
+
+    // Scrollbar: Works on Chrome, Edge, and Safari
+    pre::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    pre::-webkit-scrollbar-track {
+        background: $markdown-color-code-bg;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+        background-color: $markdown-color-code-bg;
+        border-radius: $markdown-color-code-bg;
+        border: 3px solid $markdown-color-code-bg;
+    }
+
+    code {
+        font-family: $font-family-code;
+        font-size: $font-size-base * 0.9;
+        color: $markdown-color-code-text;
+        background-color: $markdown-color-code-bg;
+        border-radius: $markdown-border-radius * 0.5;
+    }
+
+    :not(pre)>code {
+        word-break: break-all;
+        padding: 0 ($markdown-spacing * 0.5) 0 ($markdown-spacing * 0.5);
+    }
+
+    pre {
+        margin: ($markdown-spacing * 2) 0 ($markdown-spacing * 2) 0;
+        border-radius: $markdown-border-radius;
+        background-color: $markdown-color-code-bg;
+        padding: $markdown-spacing $markdown-spacing $markdown-spacing $markdown-spacing;
+        overflow-x: scroll;
+
+
+        @include xl-up {
+            overflow-x: none;
+
+            &:hover {
+                overflow-x: scroll;
+            }
+        }
+    }
+
+    // ---------- Table ----------
+    .table-wrapper {
+        margin-top: ($markdown-spacing * 2);
+        overflow-x: auto;
+        padding: 1rem;
+        margin-bottom: ($markdown-spacing * 2);
+        border: solid 1px;
+        border-color: $markdown-color-text;
+        border-radius: $markdown-border-radius;
+
+        table {
+            margin-top: ($markdown-spacing * 2);
+            text-align: left;
+            border-collapse: collapse;
+            vertical-align: middle;
+            width: 100%;
+            border-spacing: 2px;
+
+            th,
+            td,
+            td {
+                white-space: nowrap
+            }
+
+            tr {
+                border-bottom: solid 1px;
+                border-color: $markdown-color-text;
+            }
+
+            thead {
+                th {
+                    font-weight: 400;
+                }
+            }
+
+            tbody {
+                td {
+                    &:first-of-type {
+                        font-weight: $markdown-font-weight-bold;
+                    }
+                }
+
+                tr {
+                    font-weight: 200;
+
+                    &:last-of-type {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            td,
+            th {
+                padding: 0.5rem;
+            }
+        }
+
+    }
+
+    table {
+        margin-top: ($markdown-spacing * 2);
+        text-align: left;
+        border-collapse: collapse;
+        vertical-align: middle;
+        width: 100%;
+        border-spacing: 2px;
+
+        th,
+        td,
+        td {
+            hyphens: auto;
+        }
+
+        tr {
+            border-bottom: solid 1px;
+            border-color: $markdown-color-text;
+        }
+
+        thead {
+            th {
+                font-weight: 400;
+            }
+        }
+
+        tbody {
+            td {
+                &:first-of-type {
+                    font-weight: $markdown-font-weight-bold;
+                }
+            }
+
+            tr {
+                font-weight: 200;
+
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        td,
+        th {
+            padding: 0.5rem;
+        }
+    }
+
+    // ---------- Images ----------
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    // ---------- Horizontal Rule ----------
+    hr {
+        border: none;
+        border-top: 1px solid $markdown-color-border;
+        margin: ($markdown-spacing * 3) 0;
+    }
+
+
+    // ---------- Footnotes ----------
+    .footnotes {
+        font-size: 0.9em;
+        //color: $color-muted;
+        //border-top: 1px solid $color-border;
+        margin-top: 2em;
+        padding-top: 1em;
+    }
+
+    // ---------- Definition Lists ----------
+    dl {
+        margin: 1em 0;
+    }
+
+    dt {
+        font-weight: $markdown-font-weight-bold;
+    }
+
+    dd {
+        font-weight: $markdown-font-weight;
+        margin-left: $markdown-spacing;
+        margin-bottom: $markdown-spacing;
+    }
+}

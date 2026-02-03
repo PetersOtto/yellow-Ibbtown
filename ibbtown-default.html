@@ -1,0 +1,32 @@
+<?php $this->yellow->layout("head001") ?>
+<body id="page-top">
+<?php echo $this->yellow->page->getPage("header")->getContentHtml() ?>
+<?php $this->yellow->layout("navigation001") ?>
+<main class="<?php echo "layout-".$this->yellow->page->getHtml("layout") ?>">
+<article class="default-article">
+<div class="hero">
+<div class="image-wrapper">
+<?php
+$heroImageName = $this->yellow->page->getHtml("heroImage");
+$heroImageNameAlt = $this->yellow->page->getHtml("heroImageAlt");
+$basePfath = $this->yellow->page->getBase(true);
+$mediaPfath = $this->yellow->lookup->findMediaDirectory("coreImageLocation");
+$pathToHeroImage = $basePfath . "/" .$mediaPfath . $heroImageName;
+if ($heroImageName === ""): ?>
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php else: ?>
+<?php list($width, $height, $type, $attr) = getimagesize("$mediaPfath$heroImageName"); ?>
+<img src="<?php echo $pathToHeroImage ?>" <?php echo $attr ?> alt="<?php echo $heroImageNameAlt ?>" >
+<?php endif ?>
+</div>
+</div>
+<div class="article-content">
+<div class="container">
+<?php echo $this->yellow->page->getContentHtml() ?>
+</div>
+</div>
+</article>
+</main>
+<?php $this->yellow->layout("footer001") ?>
+</body>
+</html>

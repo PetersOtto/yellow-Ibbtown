@@ -1,0 +1,26 @@
+<?php list($name, $pages) = $this->yellow->getLayoutArguments() ?>
+<?php if ($pages->isPagination()): ?>
+<?php $countPage = $pages->getPaginationCount() ?>
+<?php $currentPage = $pages->getPaginationNumber() ?>
+<div id="pagination"  role="navigation" aria-label="<?php echo $this->yellow->language->getTextHtml("corePagination") ?>">
+<nav aria-label="Page navigation">
+<ul>
+<?php if ($pages->getPaginationPrevious()): ?>
+<li><a href="<?php echo $pages->getPaginationPrevious() ?>">&#8592;</a></li>
+<!-- <li><a href="<?php echo $pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1) ?>">&#8606;</a></li> -->
+<?php else: ?>
+<li class="disabled"><a href="#">&#8592;</a></li>
+<!-- <li class="disabled"><a href="#">&#8606;</a></li> -->
+<?php endif ?>
+<li class="pagination-page-number"><a href="<?php echo $pages->getPaginationLocation($absoluteLocation = true, $pageNumber = $currentPage) ?>"><?php echo sprintf('%02d', $currentPage) ?> <?php echo sprintf('%02d', $countPage) ?></a></li>
+<?php if ($pages->getPaginationNext()): ?>
+<!-- <li ><a href="<?php echo $pages->getPaginationLocation($absoluteLocation = true, $pageNumber = $countPage) ?>">&#8608;</a></li> -->
+<li ><a href="<?php echo $pages->getPaginationNext() ?>">&#8594;</a></li>
+<?php else: ?>
+<!-- <li class="disabled"><a href="#">&#8608;</a></li> -->
+<li class="disabled"><a href="#">&#8594;</a></li>
+<?php endif ?>
+</ul>
+</nav>
+</div>
+<?php endif ?>

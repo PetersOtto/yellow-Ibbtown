@@ -1,0 +1,114 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Footer (footer001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Spacing
+$footer-spacing: $container-spacing;
+$footer-distance-to-main: 8rem;
+
+// Nav Footer Color
+$footer-color: $dark;
+$footer-bg-color: $light;
+$footer-hover-color: $light;
+$footer-hover-bg-color: $dark;
+
+// Nav Footer Font
+$footer-font-family-desktop: $font-family-main;
+$footer-font-size-desktop: $font-size-base;
+$footer-font-weight-desktop: $font-weight-base;
+
+// TextArea Footer Color
+$textarea-footer-color: $dark;
+$textarea-footer-bg-color: $light;
+
+// TextArea Footer Font
+$textarea-footer-font-family-desktop: $font-family-main;
+$textarea-footer-font-size-desktop: clamp(($h2-font-size * 0.8), 2vw, $h2-font-size); //h2
+$textarea-footer-font-weight-desktop: $font-weight-base;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Footer (footer001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+footer#main-footer {
+    padding: $footer-distance-to-main 0 $footer-spacing 0;
+
+    .footer-container {
+        @extend .container-fluid;
+
+        .footer-wrapper {
+            display: grid;
+
+            @include lg-up {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            grid-template-columns: 1fr;
+
+            #footer-textarea {
+                li {
+                    font-style: normal;
+                    list-style-type: none;
+                    color: $textarea-footer-color;
+                    background-color: $textarea-footer-bg-color;
+                    font-family: $textarea-footer-font-family-desktop;
+                    font-weight: $textarea-footer-font-weight-desktop;
+                    font-size: $textarea-footer-font-size-desktop;
+                    margin: 0;
+                }
+            }
+
+            .footer-navbar {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                .footer-nav-list {
+                    ul {
+                        height: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+
+                        @include lg-up {
+                            flex-wrap: wrap-reverse;
+                            justify-content: flex-end;
+                        }
+
+                        li {
+                            display: inline-block;
+                            list-style-type: none;
+
+                            a {
+                                @include nav-button;
+                                margin: 0.5rem 0.5rem 0 0rem;
+
+                                color: $footer-color;
+                                background-color: $footer-bg-color;
+                                font-family: $footer-font-family-desktop;
+                                font-size: $footer-font-size-desktop;
+
+                                &:link,
+                                &:visited {
+                                    color: $footer-color;
+                                    background-color: $footer-bg-color;
+                                    text-decoration: none;
+                                }
+
+                                &.active,
+                                &:hover {
+                                    text-decoration: none;
+                                    color: $footer-hover-color;
+                                    background-color: $footer-hover-bg-color;
+                                    border-color: $footer-hover-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

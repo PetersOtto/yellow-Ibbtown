@@ -1,0 +1,92 @@
+<?php $this->yellow->layout("head001") ?>
+<body id="page-top">
+<?php echo $this->yellow->page->getPage("header")->getContentHtml() ?>
+<?php $this->yellow->layout("navigation001") ?>
+<main class="<?php echo "layout-".$this->yellow->page->getHtml("layout") ?>">
+<?php $pages = $this->yellow->page->getPages("blog")->paginate($this->yellow->system->get("blogPaginationLimit")) ?>
+<?php $blogLocation = $this->yellow->page->location ?>
+<?php foreach ($pages as $page): ?>
+<?php $page->set("entryClass", "post") ?>
+<?php if ($page->isExisting("tag")): ?>
+<?php foreach (preg_split("/\s*,\s*/", $page->get("tag")) as $tag) { $page->set("entryClass", $page->get("entryClass")." tag-".$this->yellow->lookup->normaliseArguments($tag, false)); } ?>
+<?php endif ?>
+<article class="blog-start-article">
+<div class="content-wrapper">
+    <div class="image-wrapper">
+<?php
+// Use the hero image of the post.
+// If not available, ->
+$heroImageName = $page->getHtml("heroImage");
+$heroImageNameAlt = $page->getHtml("heroImageAlt");
+$basePfath = $page->getBase(true);
+$mediaPfath = $this->yellow->lookup->findMediaDirectory("coreImageLocation");
+$pathToHeroImage = $basePfath . "/" .$mediaPfath . $heroImageName;
+
+// Use the first image of the post.
+// If not available use the error message.
+$fullContent = $page->getContentHtml();
+preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $fullContent, $src);
+preg_match('/<img.+alt=[\'"](?P<alt>.+?)[\'"].*>/i', $fullContent, $alt);
+preg_match('/<img.+width=[\'"](?P<width>.+?)[\'"].*>/i', $fullContent, $width);
+preg_match('/<img.+height=[\'"](?P<height>.+?)[\'"].*>/i', $fullContent, $height);
+$srcToFirstImageOfPost = $src['src'] ?? '';
+$altFromFirstImageOfPost = $alt['alt'] ?? '';
+$widthFromFirstImageOfPost = $width['width'] ?? '';
+$heightFromFirstImageOfPost = $height['height'] ?? ''; 
+?>
+<?php if (($srcToFirstImageOfPost == '') && ($heroImageName == "")) : ?>
+<div><h1>No Image Available!</h1></div>
+<?php elseif ($heroImageName != ""): ?>
+<?php list($width, $height, $type, $attr) = getimagesize("$mediaPfath$heroImageName");?>
+<a href="<?php echo $page->getLocation(true) ?>"><img src="<?php echo $pathToHeroImage ?>" <?php echo $attr ?> alt="<?php echo $heroImageNameAlt ?>" ></a>
+<?php else: ?>
+<a href="<?php echo $page->getLocation(true) ?>"><img loading="lazy" src="<?php echo $srcToFirstImageOfPost ?>" width="<?php echo $widthFromFirstImageOfPost ?>" height="<?php echo $heightFromFirstImageOfPost ?>" alt="<?php echo $altFromFirstImageOfPost ?>"></a>
+<?php endif ?>
+</div>
+<div class="text-wrapper">
+<h2><a href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("title") ?></a></h2>
+<p><?php echo $page->getDateHtml("published") . " " . $this->yellow->language->getTextHtml("blogBy") . " "; ?>
+<?php $authorCounter = 0; foreach (preg_split("/\s*,\s*/", $page->get("author")) as $author) { if (++$authorCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">".htmlspecialchars($author)."</a>"; } ?>
+</p>
+<ul>
+<?php
+// Marks the tag that is selected. 
+$choosedTag = preg_replace('/^.*: /', '', $this->yellow->page->getHtml("TitleContent"));
+$allTagsString = $page->getHtml("tag");
+$allTagsArray = explode(",", $allTagsString);
+for ($i = 0; $i < count($allTagsArray); $i++):
+$allTagsArray[$i] = trim($allTagsArray[$i]);
+$locationStart = $this->yellow->page->getBase(true).$blogLocation;
+$locationTag = $locationStart . "tag:" . strtolower($allTagsArray[$i]) . "/";
+?>
+<?php if ($allTagsArray[$i] === $choosedTag): ?><li class="choosed-tag"><a href="<?php echo $locationTag ?>"><?php echo "$allTagsArray[$i]" ?></a></li><?php echo "\n"; endif ?>
+<?php if ($allTagsArray[$i] !== $choosedTag && $choosedTag !== "Arbeiten"): ?><li><a href="<?php echo $locationTag ?>"><?php echo $allTagsArray[$i] ?></a></li><?php echo "\n"; endif ?>
+<?php if ($choosedTag === "Arbeiten"): ?><li class="empty-choosed-tag"><a href="<?php echo $locationTag ?>"><?php echo $allTagsArray[$i]?></a></li><?php echo "\n"; endif ?>
+<?php endfor ?>
+</ul>
+<div class="text-description">
+<?php  
+// Use only 175 characters or »more« 
+$postContent = $page->getContentHtml();
+$searchForMore = strpos($postContent, "<!--more-->");
+$searchForP = strpos($postContent, "<p>");
+$smallTextDescription = substr($postContent, $searchForP, 200);
+$delTags = array("<p>", "</p>");
+$smallTextDescription = str_replace($delTags, "", $smallTextDescription);
+$smallTextDescription = preg_replace('/[^ ]*$/', '', substr($smallTextDescription, 0, 175));
+?>
+<?php if ($searchForMore === false): ?>
+<p><?php echo $smallTextDescription ?><a class="read-more" href="<?php echo $page->getLocation(true) ?> "> <?php echo $this->yellow->language->getTextHtml("blogMore") ?> </a></p>
+<?php else: ?>
+<?php echo $this->yellow->toolbox->createTextDescription($page->getContentHtml(), 0, false, "<!--more-->", "<a class=\"read-more\" href=\"".$page->getLocation(true)."\">".$this->yellow->language->getTextHtml("blogMore")." </a>") ?>
+<?php endif ?>
+</div>
+</div>
+</div>
+</article>
+<?php endforeach ?>
+<?php $this->yellow->layout("pagination001", $pages) ?>
+</main>
+<?php $this->yellow->layout("footer001") ?>
+</body>
+</html>

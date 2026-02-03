@@ -1,0 +1,17 @@
+<?php $this->yellow->layout("head001") ?>
+<body>
+<?php echo $this->yellow->page->getPage("header")->getContentHtml() ?>
+<?php $this->yellow->layout("navigation001") ?>
+<main class="<?php echo "layout-".$this->yellow->page->getHtml("layout") ?>">
+<article>
+<header>
+<div class="container-fluid">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+</div>
+</header>
+<div class="container-fluid"><?php echo $this->yellow->page->getContentHtml() ?></div>
+</article>
+</main>
+<?php $this->yellow->layout("footer001") ?>
+</body>
+</html>

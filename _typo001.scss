@@ -1,0 +1,140 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Typo (001)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Webfonts
+// https://rsms.me/inter/
+
+@font-face {
+  font-family: "InterVariable";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../fonts/woff2/InterVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "InterVariable";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("../fonts/woff2/InterVariable-Italic.woff2") format("woff2");
+}
+
+// https://www.ibm.com/plex/
+
+@font-face {
+  font-display: swap; 
+  font-family: 'IBMPlexMono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/woff2/IBMPlexMono-Light.woff2') format('woff2'), 
+       url('../fonts/woff/IBMPlexMono-Light.woff') format('woff'); 
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Typo (001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* 
+$font-family-main: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-family-heading: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-family-code: "Cutive Mono", ui-monospace, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ */
+
+$font-family-main: "InterVariable", system-ui, -apple-system, sans-serif;
+$font-family-heading: "InterVariable", system-ui, -apple-system, sans-serif;
+$font-family-code: "IBMPlexMono", ui-monospace, system-ui, -apple-system, serif;
+
+//$font-size-base: 1.2rem;
+$font-size-base: 1.4rem;
+$font-weight-base: 200;
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+//$font-weight-bold: 700;
+$font-weight-bold: 400;
+
+p{
+  font-family: $font-family-main;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+}
+
+// Typo --> headings
+/* 
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+*/
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2.5 !default;
+$h3-font-size: $font-size-base * 2.5 !default;
+$h4-font-size: $font-size-base * 2.5 !default;
+$h5-font-size: $font-size-base * 2.5 !default;;
+$h6-font-size: $font-size-base * 2.5 !default;;
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $font-family-heading;
+  //font-weight: $font-weight-bold;
+  font-weight: 200;
+  line-height: $line-height-heading;
+  margin: 0 0 0.5rem 0;
+}
+
+h1,
+.h1,
+.fs-1 {
+  //font-size: clamp(($h1-font-size * 0.6), 2.5vw, $h1-font-size);
+  font-size: clamp(($h1-font-size * 0.8), 2.5vw, $h1-font-size);
+}
+h2,
+.h2,
+.fs-2 {
+  //font-size: clamp(($h2-font-size * 0.6), 2vw, $h2-font-size);
+  font-size: clamp(($h2-font-size * 0.8), 2vw, $h2-font-size);
+}
+h3,
+.h3,
+.fs-3 {
+  //font-size: clamp(($h3-font-size * 0.6), 1.75vw, $h3-font-size);
+  font-size: clamp(($h3-font-size * 0.8), 1.75vw, $h3-font-size);
+}
+h4,
+.h4,
+.fs-4 {
+  font-size: clamp($font-size-base, 1.5vw, $h4-font-size);
+}
+h5,
+.h5,
+.fs-5 {
+  font-size: clamp($font-size-base, 1.25vw, $h5-font-size);
+}
+h6,
+.h6,
+.fs-6 {
+  font-size: clamp($font-size-base, 1vw, $h6-font-size);
+}

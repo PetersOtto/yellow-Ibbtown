@@ -1,0 +1,61 @@
+<?php $this->yellow->layout("head001") ?>
+<body>
+<?php echo $this->yellow->page->getPage("header")->getContentHtml() ?>
+<?php $this->yellow->layout("navigation001") ?>
+<main class="<?php echo "layout-".$this->yellow->page->getHtml("layout") ?>">
+<?php $this->yellow->page->set("entryClass", "post") ?>
+<?php if ($this->yellow->page->isExisting("tag")): ?>
+<?php foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("tag")) as $tag) { $this->yellow->page->set("entryClass", $this->yellow->page->get("entryClass")." tag-".$this->yellow->lookup->normaliseArguments($tag, false)); } ?>
+<?php endif ?>
+<article class="blog-article">
+<div class="hero">
+<div class="image-wrapper">
+<?php
+$heroImageName = $this->yellow->page->getHtml("heroImage");
+$heroImageNameAlt = $this->yellow->page->getHtml("heroImageAlt");
+$basePfath = $this->yellow->page->getBase(true);
+$mediaPfath = $this->yellow->lookup->findMediaDirectory("coreImageLocation");
+$pathToHeroImage = $basePfath . "/" .$mediaPfath . $heroImageName;
+if ($heroImageName === ""): ?>
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php else: ?>
+<?php list($width, $height, $type, $attr) = getimagesize("$mediaPfath$heroImageName"); ?>
+<img src="<?php echo $pathToHeroImage ?>" <?php echo $attr ?> alt="<?php echo $heroImageNameAlt ?>" >
+<?php endif ?>
+</div>
+</div>
+<div class="article-content">
+<header class="blog-article-header">
+<div class="container">
+<h1>
+<?php echo $this->yellow->page->getHtml("titleContent") ?>
+</h1>
+<p>
+<?php echo $this->yellow->page->getDateHtml("published") . " " . $this->yellow->language->getTextHtml("blogBy") . " "; ?>
+<?php $authorCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("author")) as $author) { if (++$authorCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">".htmlspecialchars($author)."</a>"; } ?>
+</p>
+<?php if ($this->yellow->page->isExisting("tag")): ?>
+<p>
+<?php echo $this->yellow->language->getTextHtml("blogTag") ?> <?php $tagCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("tag")) as $tag) { if (++$tagCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("tag:$tag")."\">".htmlspecialchars($tag)."</a>"; } ?>
+</p>
+<?php endif ?>
+</div>
+</header>
+<div class="container">
+<?php echo $this->yellow->page->getContentHtml() ?>
+</div>
+</div>
+</article>
+</main>
+<?php $this->yellow->layout("footer001") ?>
+<?php $description = $this->yellow->language->getTextHtml("CorePaginationPrevious"); ?>
+<script>
+var description = "<?php echo $description; ?>";
+if (document.getElementById('back')) {
+if(document.referrer.includes(window.location.hostname)){
+document.getElementById('back').innerHTML = '<a href="javascript:window.history.go(-1);">' + description + '</a>';
+}}
+</script> 
+</body>
+</html>
+

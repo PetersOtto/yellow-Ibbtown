@@ -1,0 +1,24 @@
+<footer id="main-footer">
+<div class="footer-container">
+<div class="footer-wrapper">
+<div id="footer-textarea">
+<ul>
+<?php 
+$footertextFromHeader = $this->yellow->page->getPage("footer")->getHtml("footertext");
+$footertextParts = explode(';', $footertextFromHeader);
+foreach($footertextParts as $footertextParts): ?>
+<li><?php echo trim($footertextParts) ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+<nav class="footer-navbar">
+<div class="footer-nav-list">
+<?php echo $this->yellow->page->getPage("footer")->getContentHtml() ?>
+</div>
+</nav>
+</div>
+</div>
+</footer>
+<?php echo $this->yellow->page->getExtraHtml("footer") ?>
+<?php $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");  ?>
+<script defer="defer" src='<?php $theme = $this->yellow->system->get("theme"); $jsLink = $assetLocation . "$theme/js/custom.js"; $jsLinkInternal = "system/themes/$theme/js/custom.js"; $jsTime = filemtime($jsLinkInternal); echo $jsLink . "?" . $jsTime ?>'></script>

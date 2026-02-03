@@ -1,0 +1,63 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Container (container001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$container-spacing: 1rem;
+$container-big-faktor: 2;
+$container-big-spacing: ($container-spacing * $container-big-faktor);
+$container-width: 800px;
+$container-big-width: 1280px;
+$container-max-width: $max; // see breakpoints
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Container (container001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.container-fluid {
+  max-width: 100%;
+  padding-right: $container-spacing;
+  padding-left: $container-spacing;
+
+  @include xl-up {
+    padding-right: $container-big-spacing;
+    padding-left: $container-big-spacing;
+  }
+}
+
+.container {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-spacing;
+  padding-left: $container-spacing;
+
+  @include xxl-up {
+    padding-right: $container-big-spacing;
+    padding-left: $container-big-spacing;
+  }
+}
+
+.container-big {
+  max-width: $container-big-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-spacing;
+  padding-left: $container-spacing;
+
+  @include xl-up {
+    padding-right: $container-big-spacing;
+    padding-left: $container-big-spacing;
+  }
+}
+
+.container-max {
+  @include max-up {
+    max-width: $container-max-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

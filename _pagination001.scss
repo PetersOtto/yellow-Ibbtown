@@ -1,0 +1,73 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Pagination (pagination001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Spacing
+$pagination-spacing: $container-spacing;
+$pagination-spacing-to-main: 65px;
+
+// pagination Color
+$pagination-color: $dark;
+$pagination-bg-color: $light;
+$pagination-disable-color: lighten($pagination-color, 40%);
+
+// pagination Font
+$pagination-font-family-desktop: $font-family-main;
+$pagination-font-size-desktop: $font-size-base;
+$pagination-font-weight-desktop: $font-weight-base;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Pagination (pagination001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#pagination {
+  padding-top: $pagination-spacing-to-main;
+  font-family: $pagination-font-family-desktop;
+  font-size: $pagination-font-size-desktop;
+  font-weight: $pagination-font-weight-desktop;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  nav {
+    width: 1280px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    ul {
+      padding-left: 0;
+
+      .disabled {
+        &>a {
+          pointer-events: none;
+          cursor: not-allowed;
+          color: $pagination-disable-color;
+        }
+      }
+
+      .pagination-page-number {
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      li {
+        padding: 0;
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: $pagination-color;
+
+          &.active,
+          &:hover {
+            color: $pagination-disable-color;
+          }
+        }
+
+        list-style: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<?php $pages = $this->yellow->content->top() ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<div class="brand">
+<h1>
+<a class="nav-brand" aria-label="back to Home" href="<?php if (($this->yellow->page->getBase(true). "/")==$this->yellow->page->getLocation(true) ): echo "#page-top"; else: echo $this->yellow->page->getBase(true) . "/"; endif; ?>"><?php echo $this->yellow->page->getHtml("sitename") ?></a>
+</h1>
+</div>
+<nav class="main-navbar" aria-label="main navigation">
+<div>
+<ul class="nav-list">
+<?php $checkLayout = $this->yellow->page->getHtml("layout"); $blogLocation = $this->yellow->page->location;?>
+<?php if ($checkLayout == "blog"): ?>
+<li id="back"><a href="<?php echo $this->yellow->page->getBase(true) . "/" ?>"><?php echo $this->yellow->language->getTextHtml("CorePaginationPrevious") ?></a></li>
+<?php endif  ?>
+<?php foreach ($pages as $page): ?>
+
+<li><a <?php echo $page->isActive() ? " class=\"active\" aria-current=\"page\"" : ""?> href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("titleNavigation") ?></a></li>
+<?php endforeach  ?>
+</ul>
+<?php // tagnavi for Ibbtown
+
+if ($checkLayout == "blog-start"){ 
+
+    $url = $this->yellow->page->getBase();
+    $urlArg = $this->yellow->toolbox->getLocationArguments();
+    echo $this->yellow->extension->get("tagnavi")->getTagNavi($blogLocation , "count" , "0" , "tagnavi" , "All Projects" , $url, $urlArg);
+}?>
+
+
+</div>
+</nav>
+

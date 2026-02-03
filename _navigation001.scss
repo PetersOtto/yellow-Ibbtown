@@ -1,0 +1,130 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Navbar (navigation001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Spacing
+$navbar-spacing: $container-spacing;
+$navbar-big-spacing: $container-big-spacing;
+$navbar-brand-height: 65px;
+
+// Navbar Color
+$navbar-color: $dark;
+$navbar-bg-color: $light;
+$navbar-hover-color: $light;
+$navbar-hover-bg-color: $dark;
+
+// Navbar Font
+$navbar-font-family-desktop: $font-family-main;
+$navbar-font-size-desktop: $font-size-base;
+$navbar-font-weight-desktop: 400;
+
+// Brand Color
+$brand-color: $dark;
+$brand-bg-color: transparent;
+
+// Brand Font
+$brand-font-family-desktop: $font-family-main;
+$brand-font-size-desktop: clamp(($h2-font-size * 0.8), 2vw, $h2-font-size); //h2
+$brand-font-weight-desktop: $font-weight-base;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Navbar (navigation001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.brand {
+  padding: $navbar-spacing 0 0 $navbar-spacing;
+
+  @include xl-up {
+    padding: $navbar-big-spacing 0 0 $navbar-big-spacing;
+  }
+
+  z-index: 1;
+  position: fixed;
+  display: block;
+  min-height: $navbar-brand-height;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: $brand-color;
+      background-color: $brand-bg-color;
+      font-family: $brand-font-family-desktop;
+      font-size: $brand-font-size-desktop;
+      font-weight: $brand-font-weight-desktop;
+    }
+  }
+}
+
+.main-navbar {
+  z-index: 1;
+  margin-top: ($navbar-brand-height);
+  padding: $navbar-spacing $navbar-spacing 0 $navbar-spacing;
+  position: fixed;
+  display: flex;
+  align-self: flex-start;
+
+  @include lg-up {
+    max-width: 70dvw;
+    margin-top: 0;
+    padding: $navbar-spacing $navbar-spacing 0 0;
+
+    @include xl-up {
+      padding: $navbar-big-spacing $navbar-big-spacing 0 0;
+    }
+
+    min-height: $navbar-brand-height;
+    align-self: flex-end;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include lg-up {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+
+      a {
+        @include nav-button;
+        margin: 0.5rem 0.5rem 0 0rem;
+
+        @include lg-up {
+          margin: 0.5rem 0 0 0.5rem;
+        }
+
+        color: $navbar-color;
+        background-color: $navbar-bg-color;
+        font-family: $navbar-font-family-desktop;
+        font-size: $navbar-font-size-desktop;
+        font-weight: $navbar-font-weight-desktop;
+
+        &:link,
+        &:visited {
+          color: $navbar-color;
+          background-color: $navbar-bg-color;
+          text-decoration: none;
+        }
+
+        &.active,
+        &:hover {
+          text-decoration: none;
+          color: $navbar-hover-color;
+          background-color: $navbar-hover-bg-color;
+          border-color: $navbar-hover-bg-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// breakpoints (001)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$max: 2800px;
+
+$grid-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+  max: $max,
+) !default;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// »sm« Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin sm-md {
+  @media (min-width: #{$sm}) and (max-width: #{$md - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-lg {
+  @media (min-width: #{$sm}) and (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-xl {
+  @media (min-width: #{$sm}) and (max-width: #{$xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-xxl {
+  @media (min-width: #{$sm}) and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-xxxl {
+  @media (min-width: #{$sm}) and (max-width: #{$xxxl - 1px}) {
+    @content;
+  }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// »md« Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin md-lg {
+  @media (min-width: #{$md}) and (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-xl {
+  @media (min-width: #{$md}) and (max-width: #{$xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-xxl {
+  @media (min-width: #{$md}) and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+@mixin md-xxxl {
+  @media (min-width: #{$md}) and (max-width: #{$xxxl - 1px}) {
+    @content;
+  }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// »lg« Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+@mixin lg-xl {
+  @media (min-width: #{$lg}) and (max-width: #{$xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-xxl {
+  @media (min-width: #{$lg}) and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg-xxxl {
+  @media (min-width: #{$lg}) and (max-width: #{$xxxl - 1px}) {
+    @content;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// »xl« Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+@mixin xl-xxl {
+  @media (min-width: #{$xl}) and (max-width: #{$xxl - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl-xxxl {
+  @media (min-width: #{$xl}) and (max-width: #{$xxxl - 1px}) {
+    @content;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// »xxl« Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+@mixin xxl-xxxl {
+  @media (min-width: #{$xxl}) and (max-width: #{$xxxl - 1px}) {
+    @content;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// UP Media Query
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+@mixin sm-up {
+  @media (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin xxl-up {
+  @media (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin xxxl-up {
+  @media (min-width: #{$xxxl}) {
+    @content;
+  }
+}
+
+@mixin max-up {
+  @media (min-width: #{$max}) {
+    @content;
+  }
+}

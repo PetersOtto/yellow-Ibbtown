@@ -1,0 +1,94 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Links (001)
+// Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$link-dark-color: $dark;
+$link-light-color: $light;
+$text-underline-offset: 5px;
+$text-decoration-thickness: 1px;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Links (001)
+// Adjustments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin nav-button {
+  padding: 6px 8px;
+  border-radius: 50rem;
+  border: solid 2px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+@mixin link-dark-main-text {
+  color: $link-dark-color;
+  text-decoration-color: $link-dark-color;
+  text-underline-offset: $text-underline-offset;
+  text-decoration: underline;
+  text-decoration-thickness: $text-decoration-thickness;
+
+  &:link,
+  &:visited {
+    text-decoration: underline;
+    text-decoration-thickness: $text-decoration-thickness;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin link-light-main-text {
+  color: $link-light-color;
+  text-decoration-color: $link-light-color;
+  text-underline-offset: $text-underline-offset;
+  text-decoration: underline;
+  text-decoration-thickness: $text-decoration-thickness;
+
+  &:link,
+  &:visited {
+    text-decoration: underline;
+    text-decoration-thickness: $text-decoration-thickness;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin link-dark-navigation {
+  color: $link-dark-color;
+  text-decoration-color: $link-dark-color;
+  text-underline-offset: $text-underline-offset;
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &.active,
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: $text-decoration-thickness;
+  }
+}
+
+@mixin link-light-navigation {
+  color: $link-light-color;
+  text-decoration-color: $link-light-color;
+  text-underline-offset: $text-underline-offset;
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &.active,
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: $text-decoration-thickness;
+  }
+}

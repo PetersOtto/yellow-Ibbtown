@@ -9,8 +9,8 @@
 +++++++++++++++++++++++++++++++++++++
 + yellow-ibbtown                    +
 +++++++++++++++++++++++++++++++++++++
-+ Version: 0.9.1                    +
-+ 02.02.2026                        +
++ Version: 0.9.2                    +
++ 04/02/2026                        +
 +++++++++++++++++++++++++++++++++++++
 + Base Theme: Ibbtown               +
 +++++++++++++++++++++++++++++++++++++ 
@@ -20,7 +20,13 @@
 Changelog
 *******************
 
-02.02.26
-========
+26/02/04 v0.9.2
+===============
+1) Some bugs fixed
+2) The tagnavi extension is now installed as a standalone extension. 
+3) The filter name »All Projects« can now be changed in the yellow-system.ini.
+
+26/02/02 v0.9.1
+===============
 1) Start with v0.9.1
 

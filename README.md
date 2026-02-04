@@ -1,7 +1,7 @@
 # yellow-Ibbtown
 Ibbtown is a theme for the Yellow CMS by datenstrom.
 
-<p align="center"><img src="02-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
+<p align="center"><img src="01-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
 
 ## My target
 I developed the Ibbtown theme to have a basic theme for developing further themes. It is intended to be a starting point.
@@ -32,4 +32,5 @@ Currently, a placeholder image is being used as the Opengraph image. You should 
 <p align="center"><img src="02-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
 <p align="center"><img src="03-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
 <p align="center"><img src="04-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
+<p align="center"><img src="05-yellow-ibbtown.png?raw=true" alt="Bildschirmfoto"></p>
 

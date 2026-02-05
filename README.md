@@ -28,6 +28,9 @@ I use the [»realfavicongenerator«](https://realfavicongenerator.net/) to creat
 ### Filter name »All Projects«
 You can change the »All Projects« entry on your blog startpage if you want. Go to `\system\extensions\yellow-system.ini` and choose your filter name for all entries `TagnaviFilterName: Your Choose`.
 
+### Footer
+The footer entries can be changed in `footer.md`. This file is located in the folder `/content/shared/`
+
 ### Custom css code
 Do you want to insert your own CSS code? Go to `/systeme/themes/` and enter your custom code in the »ibbtown.css« file.
 

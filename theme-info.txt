@@ -9,8 +9,8 @@
 +++++++++++++++++++++++++++++++++++++
 + yellow-ibbtown                    +
 +++++++++++++++++++++++++++++++++++++
-+ Version: 0.9.2                    +
-+ 04/02/2026                        +
++ Version: 0.9.3                    +
++ 2026/02/04                        +
 +++++++++++++++++++++++++++++++++++++
 + Base Theme: Ibbtown               +
 +++++++++++++++++++++++++++++++++++++ 
@@ -19,6 +19,12 @@
 *******************
 Changelog
 *******************
+
+26/02/09 v0.9.3
+===============
+1) »system/themes/theme.css« is not longer necessary.
+ - look: ibbtown.php
+ - look: https://github.com/datenstrom/community/discussions/1060#discussioncomment-15736839
 
 26/02/04 v0.9.2
 ===============

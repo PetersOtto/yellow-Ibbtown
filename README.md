@@ -31,9 +31,6 @@ You can change the »All Projects« entry on your blog startpage if you want. Go
 ### Footer
 The footer entries can be changed in `footer.md`. This file is located in the folder `/content/shared/`
 
-### Custom css code
-Do you want to insert your own CSS code? Go to `/systeme/themes/` and enter your custom code in the »ibbtown.css« file.
-
 ## Acknowledgements
 * Thank you [Datenstrom](https://datenstrom.se/de/) for the great »Yellow CMS«
 * Danke Karsten für die Donots Bilder

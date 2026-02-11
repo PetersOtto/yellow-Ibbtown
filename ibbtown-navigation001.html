@@ -2,7 +2,7 @@
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <div class="brand">
 <h1>
-<a class="nav-brand" aria-label="back to Home" href="<?php if (($this->yellow->page->getBase(true). "/")==$this->yellow->page->getLocation(true) ): echo "#page-top"; else: echo $this->yellow->page->getBase(true) . "/"; endif; ?>"><?php echo $this->yellow->page->getHtml("sitename") ?></a>
+<a class="nav-brand" aria-label="back to Home" href="<?php if (($this->yellow->page->getBase(true). "/")==$this->yellow->page->getLocation(true) && $this->yellow->toolbox->getLocationArguments()=="" ): echo "#page-top"; else: echo $this->yellow->page->getBase(true) . "/"; endif; ?>"><?php echo $this->yellow->page->getHtml("sitename") ?></a>
 </h1>
 </div>
 <nav class="main-navbar" aria-label="main navigation">

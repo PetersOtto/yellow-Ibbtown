@@ -1,11 +1,17 @@
+/* Start with modul _default001.scss */
+
+@use "breakpoints001" as breakpoints;
+@use "color001" as dye;
+@use "markdown001" as markdown;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Default Layout - 001
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Color
-$default-dark-color: $dark;
-$default-light-color: $light;
+$default-dark-color: dye.$dark;
+$default-light-color: dye.$light;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Default (001)
@@ -14,7 +20,7 @@ $default-light-color: $light;
 
 .layout-default {
     .default-article{
-        @extend .markdown; // see »_markdown.scss«
+        @include markdown.markdown;
         .article-content {
             top: 0;
             position: relative;
@@ -32,7 +38,6 @@ $default-light-color: $light;
     }
 
     .hero {
-        //@extend .container-big;
         position: sticky;
         top: 0;
         height: 85dvh;
@@ -49,12 +54,12 @@ $default-light-color: $light;
             justify-content: center;
             align-items: center;
 
-            @include lg-xxl {
+            @include breakpoints.lg-xxl {
                 height: 65dvh;
                 margin-top: 0;
             }
 
-            @include xxl-up {
+            @include breakpoints.xxl-up {
                 width: 1280px;
                 height: 65dvh;
                 margin-top: 0;

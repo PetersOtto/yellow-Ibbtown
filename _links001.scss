@@ -1,10 +1,14 @@
+/* Start with modul _links001.scss */
+
+@use "color001" as dye;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Links (001)
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$link-dark-color: $dark;
-$link-light-color: $light;
+$link-dark-color: dye.$dark;
+$link-light-color: dye.$light;
 $text-underline-offset: 5px;
 $text-decoration-thickness: 1px;
 

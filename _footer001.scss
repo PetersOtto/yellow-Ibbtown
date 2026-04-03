@@ -1,31 +1,39 @@
+/* Start with modul _footer001.scss */
+
+@use "breakpoints001" as breakpoints;
+@use "container001" as container;
+@use "color001" as dye;
+@use "typo001" as typo;
+@use "links001" as links;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Footer (footer001)
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Spacing
-$footer-spacing: $container-spacing;
+$footer-spacing: container.$container-spacing;
 $footer-distance-to-main: 8rem;
 
 // Nav Footer Color
-$footer-color: $dark;
-$footer-bg-color: $light;
-$footer-hover-color: $light;
-$footer-hover-bg-color: $dark;
+$footer-color: dye.$dark;
+$footer-bg-color: dye.$light;
+$footer-hover-color: dye.$light;
+$footer-hover-bg-color: dye.$dark;
 
 // Nav Footer Font
-$footer-font-family-desktop: $font-family-main;
-$footer-font-size-desktop: $font-size-base;
-$footer-font-weight-desktop: $font-weight-base;
+$footer-font-family-desktop: typo.$font-family-main;
+$footer-font-size-desktop: typo.$font-size-base;
+$footer-font-weight-desktop: typo.$font-weight-base;
 
 // TextArea Footer Color
-$textarea-footer-color: $dark;
-$textarea-footer-bg-color: $light;
+$textarea-footer-color: dye.$dark;
+$textarea-footer-bg-color: dye.$light;
 
 // TextArea Footer Font
-$textarea-footer-font-family-desktop: $font-family-main;
-$textarea-footer-font-size-desktop: clamp(($h2-font-size * 0.8), 2vw, $h2-font-size); //h2
-$textarea-footer-font-weight-desktop: $font-weight-base;
+$textarea-footer-font-family-desktop: typo.$font-family-main;
+$textarea-footer-font-size-desktop: clamp((typo.$h2-font-size * 0.8), 2vw, typo.$h2-font-size); //h2
+$textarea-footer-font-weight-desktop: typo.$font-weight-base;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Footer (footer001)
@@ -36,12 +44,12 @@ footer#main-footer {
     padding: $footer-distance-to-main 0 $footer-spacing 0;
 
     .footer-container {
-        @extend .container-fluid;
+        @include container.container-fluid;
 
         .footer-wrapper {
             display: grid;
 
-            @include lg-up {
+            @include breakpoints.lg-up {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -72,7 +80,7 @@ footer#main-footer {
                         flex-wrap: wrap;
                         justify-content: flex-start;
 
-                        @include lg-up {
+                        @include breakpoints.lg-up {
                             flex-wrap: wrap-reverse;
                             justify-content: flex-end;
                         }
@@ -82,7 +90,7 @@ footer#main-footer {
                             list-style-type: none;
 
                             a {
-                                @include nav-button;
+                                @include links.nav-button;
                                 margin: 0.5rem 0.5rem 0 0rem;
 
                                 color: $footer-color;

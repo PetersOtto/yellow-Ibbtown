@@ -1,3 +1,5 @@
+/* Start with modul _typo001.scss */
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Typo (001)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,16 +41,16 @@
 // Adjustments
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/* 
-$font-family-main: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$font-family-heading: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// $font-family-main: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+//   "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$font-family-code: "Cutive Mono", ui-monospace, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-  "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
- */
+// $font-family-heading: "Inter var", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+//   "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// $font-family-code: "Cutive Mono", ui-monospace, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+//   "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ 
 
 $font-family-main: "InterVariable", system-ui, -apple-system, sans-serif;
 $font-family-heading: "InterVariable", system-ui, -apple-system, sans-serif;
@@ -70,14 +72,14 @@ p{
 }
 
 // Typo --> headings
-/* 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: $font-size-base * 1.25 !default;
-$h6-font-size: $font-size-base !default;
-*/
+
+// $h1-font-size: $font-size-base * 2.5 !default;
+// $h2-font-size: $font-size-base * 2 !default;
+// $h3-font-size: $font-size-base * 1.75 !default;
+// $h4-font-size: $font-size-base * 1.5 !default;
+// $h5-font-size: $font-size-base * 1.25 !default;
+// $h6-font-size: $font-size-base !default;
+
 
 $h1-font-size: $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 2.5 !default;

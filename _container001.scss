@@ -1,3 +1,7 @@
+/* Start with modul _container001.scss */
+
+@use "breakpoints001" as breakpoints;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Container (container001)
 // Variables
@@ -8,56 +12,73 @@ $container-big-faktor: 2;
 $container-big-spacing: ($container-spacing * $container-big-faktor);
 $container-width: 800px;
 $container-big-width: 1280px;
-$container-max-width: $max; // see breakpoints
+$container-max-width: breakpoints.$max; 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Container (container001)
 // Adjustments
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.container-fluid {
+@mixin container-fluid {
   max-width: 100%;
   padding-right: $container-spacing;
   padding-left: $container-spacing;
 
-  @include xl-up {
+  @include breakpoints.xl-up {
     padding-right: $container-big-spacing;
     padding-left: $container-big-spacing;
   }
 }
 
-.container {
+@mixin container {
   max-width: $container-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: $container-spacing;
   padding-left: $container-spacing;
 
-  @include xxl-up {
+  @include breakpoints.xxl-up {
     padding-right: $container-big-spacing;
     padding-left: $container-big-spacing;
   }
 }
 
-.container-big {
+@mixin container-big {
   max-width: $container-big-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: $container-spacing;
   padding-left: $container-spacing;
 
-  @include xl-up {
+  @include breakpoints.xl-up {
     padding-right: $container-big-spacing;
     padding-left: $container-big-spacing;
   }
 }
 
-.container-max {
-  @include max-up {
+@mixin container-max {
+  @include breakpoints.max-up {
     max-width: $container-max-width;
     margin-right: auto;
     margin-left: auto;
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+
+.container-fluid {
+  @include container-fluid;
+}
+
+.container {
+  @include container;
+}
+
+.container-big {
+  @include container-big;
+}
+
+.container-max {
+  @include container-max;
 }

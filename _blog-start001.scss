@@ -1,23 +1,33 @@
+/* Start with modul _blog-start001.scss */
+
+@use "sass:list"; //https://sass-lang.com/documentation/breaking-changes/slash-div/#transition-period
+@use "breakpoints001" as breakpoints;
+@use "container001" as container;
+@use "color001" as dye;
+@use "typo001" as typo;
+@use "links001" as links;
+@use "markdown001" as markdown;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // blog-start Layout - 001
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Spacing
-$blog-start-spacing: $container-spacing;
-$blog-start-big-spacing: $container-big-spacing;
+$blog-start-spacing: container.$container-spacing;
+$blog-start-big-spacing: container.$container-big-spacing;
 $blog-start-spacing-top: 13rem;
 
 // blog-start Color
-$blog-start-color: $dark;
-$blog-start-bg-color: $light;
-$blog-start-hover-color: $light;
-$blog-start-hover-bg-color: $dark;
+$blog-start-color: dye.$dark;
+$blog-start-bg-color: dye.$light;
+$blog-start-hover-color: dye.$light;
+$blog-start-hover-bg-color: dye.$dark;
 
 // blog-start Font
-$blog-start-font-family-desktop: $font-family-main;
-$blog-start-font-size-desktop: $font-size-base;
-$blog-start-font-weight-desktop: $font-weight-base;
+$blog-start-font-family-desktop: typo.$font-family-main;
+$blog-start-font-size-desktop: typo.$font-size-base;
+$blog-start-font-weight-desktop: typo.$font-weight-base;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // blog-start Layout (001)
@@ -27,15 +37,15 @@ $blog-start-font-weight-desktop: $font-weight-base;
 .layout-blog-start {
     padding-top: $blog-start-spacing-top * 1.5;
 
-    @include lg-up {
+    @include breakpoints.lg-up {
         padding-top: $blog-start-spacing-top;
     }
 
     .blog-start-article {
-        @extend .markdown; // see »_markdown.scss«
-        @extend .container-big;
+        @include markdown.markdown;
+        @include container.container-big;
         margin-bottom: $blog-start-spacing * 2;
-        @include lg-up {
+        @include breakpoints.lg-up {
             margin-bottom: 0;
         }
         display: flex;
@@ -47,12 +57,12 @@ $blog-start-font-weight-desktop: $font-weight-base;
             grid-gap: $blog-start-spacing;
             margin-bottom: $blog-start-spacing;
 
-            @include lg-up {
+            @include breakpoints.lg-up {
                 max-width: 1280px;
                 grid-template-columns: 1fr 2fr;
             }
 
-            @include xl-up {
+            @include breakpoints.xl-up {
                 margin-bottom: $blog-start-big-spacing;
                 grid-gap: $blog-start-big-spacing;
 
@@ -84,7 +94,7 @@ $blog-start-font-weight-desktop: $font-weight-base;
                 p {
                     margin-top: $blog-start-spacing;
 
-                    @include lg-xl {
+                    @include breakpoints.lg-xl {
                         margin-top: 11px;
                     }
                 }
@@ -92,7 +102,7 @@ $blog-start-font-weight-desktop: $font-weight-base;
                 .text-description {
 
                     a {
-                        @include link-dark-main-text;
+                        @include links.link-dark-main-text;
                     }
 
                     h1,
@@ -106,7 +116,7 @@ $blog-start-font-weight-desktop: $font-weight-base;
                 }
 
                 a {
-                    @include link-dark-navigation;
+                    @include links.link-dark-navigation;
                 }
 
                 .read-more{

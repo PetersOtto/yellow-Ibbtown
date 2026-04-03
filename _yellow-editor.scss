@@ -1,3 +1,7 @@
+/* Start with modul _yellow-editor.scss */
+
+@use "color001" as dye;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Yellow Editor
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -10,15 +14,15 @@
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$yellow-bar-text-color: $light;
-$yellow-bar-bg-color: $dark;
+$yellow-bar-text-color: dye.$light;
+$yellow-bar-bg-color: dye.$dark;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Yellow Editor
 // Adjustments
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.edit-container {
+@mixin edit-container {
     max-width: 1700px;
     padding-right: 2rem;
     padding-left: 2rem;
@@ -52,7 +56,7 @@ $yellow-bar-bg-color: $dark;
 }
 
 #yellow-pane-login {
-    @extend .edit-container;
+    @include edit-container;
 }
 
 .yellow-pane {
@@ -78,7 +82,7 @@ $yellow-bar-bg-color: $dark;
 }
 
 .yellow-bar {
-    @extend .edit-container;
+    @include edit-container;
     position: absolute;
     top: 30px;
     margin: 0 auto 2rem auto;

@@ -1,3 +1,8 @@
+/* Start with modul _main001.scss */
+
+@use "container001" as container;
+@use "color001" as dye;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Main (main001)
 // Adjustments
@@ -13,13 +18,13 @@
 }
 
 ::selection {
-    color: $dark;
-    background: $color-ute;
+    color: dye.$dark;
+    background: dye.$color-ute;
     text-shadow: none;
 }
 
 html {
-    background-color: $light;
+    background-color: dye.$light;
     height: 100%;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -43,14 +48,14 @@ a[x-apple-data-detectors] {
 }
 
 body {
-    @extend .container-max;
+    @include container.container-max;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.63);
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100dvh;
-    color: $dark;
-    background-color: $light;
+    color: dye.$dark;
+    background-color: dye.$light;
 
     main {
         width: 100%;

@@ -1,3 +1,12 @@
+/* Start with modul _markdown001.scss */
+
+@use "breakpoints001" as breakpoints;
+@use "container001" as container;
+@use "color001" as dye;
+@use "typo001" as typo;
+@use "links001" as links;
+
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Markdown (001)
 // Variables
@@ -6,30 +15,30 @@
 // ---------- Variable ----------
 
 // Color
-$markdown-color-text: $dark;
+$markdown-color-text: dye.$dark;
 //$markdown-color-muted: lighten($dark, 40%);
-$markdown-color-muted: $dark;
-$markdown-color-bg: $light;
-$markdown-color-border: $dark;
-$markdown-color-link: $dark;
-$markdown-color-code-text: $light;
-$markdown-color-code-bg: $dark;
-$markdown-color-blockquote-bg: $light;
+$markdown-color-muted: dye.$dark;
+$markdown-color-bg: dye.$light;
+$markdown-color-border: dye.$dark;
+$markdown-color-link: dye.$dark;
+$markdown-color-code-text: dye.$light;
+$markdown-color-code-bg: dye.$dark;
+$markdown-color-blockquote-bg: dye.$light;
 
 //Font
-$markdown-font-family: $font-family-main;
-$markdown-font-family-code: $font-family-code;
-$markdown-font-family-heading: $font-family-heading;
-$markdown-font-size: $font-size-base;
-$markdown-font-weight: $font-weight-base;
-$markdown-line-height: $line-height-base;
-$markdown-font-weight-bold: $font-weight-bold;
+$markdown-font-family: typo.$font-family-main;
+$markdown-font-family-code: typo.$font-family-code;
+$markdown-font-family-heading: typo.$font-family-heading;
+$markdown-font-size: typo.$font-size-base;
+$markdown-font-weight: typo.$font-weight-base;
+$markdown-line-height: typo.$line-height-base;
+$markdown-font-weight-bold: typo.$font-weight-bold;
 
 //Border
 $markdown-border-radius: 10px;
 
 // Spacing
-$markdown-spacing: $container-spacing;
+$markdown-spacing: container.$container-spacing;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Markdown (001)
@@ -37,12 +46,12 @@ $markdown-spacing: $container-spacing;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ---------- Root Container ----------
-.markdown {
+@mixin markdown() {
     font-family: $markdown-font-family;
     color: $markdown-color-text;
     background: $markdown-color-bg;
     line-height: $markdown-line-height;
-    font-size: $font-size-base;
+    font-size: typo.$font-size-base;
 
     // ---------- Headings ----------
     h1,
@@ -51,14 +60,14 @@ $markdown-spacing: $container-spacing;
     h4,
     h5,
     h6 {
-        font-family: $font-family-heading;
-        font-weight: $font-weight-base;
-        line-height: $line-height-heading;
+        font-family: typo.$font-family-heading;
+        font-weight: typo.$font-weight-base;
+        line-height: typo.$line-height-heading;
         margin-bottom: 0;
         //margin-top: clamp(1rem, 3.5vw, 2rem);
         margin-top: $markdown-spacing * 2;
 
-        @include lg-up {
+        @include breakpoints.lg-up {
             margin-left: -5rem;
         }
     }
@@ -108,7 +117,7 @@ $markdown-spacing: $container-spacing;
 
     // ---------- Links ----------
     a {
-        @include link-dark-main-text;
+        @include links.link-dark-main-text;
         color: $markdown-color-text;
         word-break: break-all;
     }
@@ -178,8 +187,8 @@ $markdown-spacing: $container-spacing;
     }
 
     code {
-        font-family: $font-family-code;
-        font-size: $font-size-base * 0.9;
+        font-family: typo.$font-family-code;
+        font-size: typo.$font-size-base * 0.9;
         color: $markdown-color-code-text;
         background-color: $markdown-color-code-bg;
         border-radius: $markdown-border-radius * 0.5;
@@ -198,7 +207,7 @@ $markdown-spacing: $container-spacing;
         overflow-x: scroll;
 
 
-        @include xl-up {
+        @include breakpoints.xl-up {
             overflow-x: none;
 
             &:hover {
@@ -351,4 +360,8 @@ $markdown-spacing: $container-spacing;
         margin-left: $markdown-spacing;
         margin-bottom: $markdown-spacing;
     }
+}
+
+.markdown{
+    @include markdown;
 }

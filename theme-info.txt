@@ -9,8 +9,8 @@
 +++++++++++++++++++++++++++++++++++++
 + yellow-ibbtown                    +
 +++++++++++++++++++++++++++++++++++++
-+ Version: 0.9.3                    +
-+ 2026/02/04                        +
++ Version: 0.9.4                    +
++ 26/04/03                          +
 +++++++++++++++++++++++++++++++++++++
 + Base Theme: Ibbtown               +
 +++++++++++++++++++++++++++++++++++++ 
@@ -19,6 +19,16 @@
 *******************
 Changelog
 *******************
+
+26/04/03 v0.9.4
+===============
+1) Change from rule »@import« to rule »@use«.
+ - look: https://sass-lang.com/documentation/breaking-changes/import/
+2) Darken() and lighten() are no longer allowed.
+ - look: _pagination001.scss --> $pagination-disable-color
+ - look: https://sass-lang.com/documentation/breaking-changes/color-functions/
+3) Due to the switch to »@use«, it was necessary to replace some »@extend« rules with »@mixin«.
+
 
 26/02/09 v0.9.3
 ===============
@@ -30,7 +40,7 @@ Changelog
 ===============
 1) Some bugs fixed
 2) The tagnavi extension is now installed as a standalone extension. 
-3) The filter name »All Projects« can now be changed in the yellow-system.ini.
+3) The filter name »All Projects« can now be changed in the »yellow-system.ini«.
 
 26/02/02 v0.9.1
 ===============

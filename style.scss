@@ -1,38 +1,34 @@
-/*
- ______   __       __       __                                  
-/\__  _\ /\ \     /\ \     /\ \__                               
-\/_/\ \/ \ \ \____\ \ \____\ \ ,_\   ___   __  __  __    ___    
-   \ \ \  \ \ '__`\\ \ '__`\\ \ \/  / __`\/\ \/\ \/\ \ /' _ `\  
-    \_\ \__\ \ \L\ \\ \ \L\ \\ \ \_/\ \L\ \ \ \_/ \_/ \/\ \/\ \ 
-    /\_____\\ \_,__/ \ \_,__/ \ \__\ \____/\ \___x___/'\ \_\ \_\
-    \/_____/ \/___/   \/___/   \/__/\/___/  \/__//__/   \/_/\/_/
+
+//  ______   __       __       __                                  
+// /\__  _\ /\ \     /\ \     /\ \__                               
+// \/_/\ \/ \ \ \____\ \ \____\ \ ,_\   ___   __  __  __    ___    
+//    \ \ \  \ \ '__`\\ \ '__`\\ \ \/  / __`\/\ \/\ \/\ \ /' _ `\  
+//     \_\ \__\ \ \L\ \\ \ \L\ \\ \ \_/\ \L\ \ \ \_/ \_/ \/\ \/\ \ 
+//     /\_____\\ \_,__/ \ \_,__/ \ \__\ \____/\ \___x___/'\ \_\ \_\
+//     \/_____/ \/___/   \/___/   \/__/\/___/  \/__//__/   \/_/\/_/
                                                                 
-+++++++++++++++++++++++++++++++++++++
-+ yellow-ibbtown                    +
-+++++++++++++++++++++++++++++++++++++
-+ Version: 0.9.3                    +
-+ 26/02/04                        +
-+++++++++++++++++++++++++++++++++++++
-+ Base Theme: Ibbtown               +
-+++++++++++++++++++++++++++++++++++++ 
-*/
+// +++++++++++++++++++++++++++++++++++++
+// + yellow-ibbtown                    +
+// +++++++++++++++++++++++++++++++++++++
+// + Version: 0.9.4                    +
+// + 26/04/03                          +
+// +++++++++++++++++++++++++++++++++++++
+// + Base Theme: Ibbtown               +
+// +++++++++++++++++++++++++++++++++++++ 
 
-@use "sass:list"; //https://sass-lang.com/documentation/breaking-changes/slash-div/#transition-period
-
-@import "importfiles/breakpoints001.scss";
-@import "importfiles/container001.scss";
-@import "importfiles/color001.scss";
-@import "importfiles/typo001.scss";
-@import "importfiles/links001.scss";
-@import "importfiles/yellow-editor.scss";
-@import "importfiles/markdown001.scss";
-
-@import "importfiles/navigation001.scss";
-@import "importfiles/pagination001.scss";
-@import "importfiles/main001.scss";
-@import "importfiles/default001.scss";
-@import "importfiles/blog001.scss";
-@import "importfiles/tagnavi001.scss";
-@import "importfiles/blog-start001.scss";
-@import "importfiles/footer001.scss";
-@import "importfiles/error001.scss";
+@use "importfiles/breakpoints001.scss";
+@use "importfiles/container001.scss";
+@use "importfiles/color001.scss";
+@use "importfiles/typo001.scss";
+@use "importfiles/links001.scss";
+@use "importfiles/yellow-editor.scss";
+@use "importfiles/markdown001.scss";
+@use "importfiles/navigation001.scss";
+@use "importfiles/pagination001.scss";
+@use "importfiles/main001.scss";
+@use "importfiles/default001.scss";
+@use "importfiles/blog001.scss";
+@use "importfiles/tagnavi001.scss";
+@use "importfiles/blog-start001.scss";
+@use "importfiles/footer001.scss";
+@use "importfiles/error001.scss"; 

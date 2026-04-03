@@ -1,21 +1,28 @@
+/* Start with modul _pagination001.scss */
+
+@use "sass:color";
+@use "container001" as container;
+@use "color001" as dye;
+@use "typo001" as typo;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Pagination (pagination001)
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Spacing
-$pagination-spacing: $container-spacing;
+$pagination-spacing: container.$container-spacing;
 $pagination-spacing-to-main: 65px;
 
 // pagination Color
-$pagination-color: $dark;
-$pagination-bg-color: $light;
-$pagination-disable-color: lighten($pagination-color, 40%);
+$pagination-color: dye.$dark;
+$pagination-bg-color: dye.$light;
+$pagination-disable-color: color.scale($pagination-color, $lightness: 40%);
 
 // pagination Font
-$pagination-font-family-desktop: $font-family-main;
-$pagination-font-size-desktop: $font-size-base;
-$pagination-font-weight-desktop: $font-weight-base;
+$pagination-font-family-desktop: typo.$font-family-main;
+$pagination-font-size-desktop: typo.$font-size-base;
+$pagination-font-weight-desktop: typo.$font-weight-base;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Pagination (pagination001)
@@ -23,6 +30,7 @@ $pagination-font-weight-desktop: $font-weight-base;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #pagination {
+  @include container.container-big;
   padding-top: $pagination-spacing-to-main;
   font-family: $pagination-font-family-desktop;
   font-size: $pagination-font-size-desktop;

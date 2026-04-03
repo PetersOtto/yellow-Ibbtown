@@ -1,32 +1,40 @@
+/* Start with modul _navigation001.scss */
+
+@use "breakpoints001" as breakpoints;
+@use "container001" as container;
+@use "color001" as dye;
+@use "typo001" as typo;
+@use "links001" as links;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Navbar (navigation001)
 // Variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Spacing
-$navbar-spacing: $container-spacing;
-$navbar-big-spacing: $container-big-spacing;
+$navbar-spacing: container.$container-spacing;
+$navbar-big-spacing: container.$container-big-spacing;
 $navbar-brand-height: 65px;
 
 // Navbar Color
-$navbar-color: $dark;
-$navbar-bg-color: $light;
-$navbar-hover-color: $light;
-$navbar-hover-bg-color: $dark;
+$navbar-color: dye.$dark;
+$navbar-bg-color: dye.$light;
+$navbar-hover-color: dye.$light;
+$navbar-hover-bg-color: dye.$dark;
 
 // Navbar Font
-$navbar-font-family-desktop: $font-family-main;
-$navbar-font-size-desktop: $font-size-base;
+$navbar-font-family-desktop: typo.$font-family-main;
+$navbar-font-size-desktop: typo.$font-size-base;
 $navbar-font-weight-desktop: 400;
 
 // Brand Color
-$brand-color: $dark;
+$brand-color: dye.$dark;
 $brand-bg-color: transparent;
 
 // Brand Font
-$brand-font-family-desktop: $font-family-main;
-$brand-font-size-desktop: clamp(($h2-font-size * 0.8), 2vw, $h2-font-size); //h2
-$brand-font-weight-desktop: $font-weight-base;
+$brand-font-family-desktop: typo.$font-family-main;
+$brand-font-size-desktop: clamp((typo.$h2-font-size * 0.8), 2vw, typo.$h2-font-size); //h2
+$brand-font-weight-desktop: typo.$font-weight-base;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Navbar (navigation001)
@@ -36,7 +44,7 @@ $brand-font-weight-desktop: $font-weight-base;
 .brand {
   padding: $navbar-spacing 0 0 $navbar-spacing;
 
-  @include xl-up {
+  @include breakpoints.xl-up {
     padding: $navbar-big-spacing 0 0 $navbar-big-spacing;
   }
 
@@ -70,12 +78,12 @@ $brand-font-weight-desktop: $font-weight-base;
   display: flex;
   align-self: flex-start;
 
-  @include lg-up {
+  @include breakpoints.lg-up {
     max-width: 70dvw;
     margin-top: 0;
     padding: $navbar-spacing $navbar-spacing 0 0;
 
-    @include xl-up {
+    @include breakpoints.xl-up {
       padding: $navbar-big-spacing $navbar-big-spacing 0 0;
     }
 
@@ -87,7 +95,7 @@ $brand-font-weight-desktop: $font-weight-base;
     display: flex;
     flex-wrap: wrap;
 
-    @include lg-up {
+    @include breakpoints.lg-up {
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -97,10 +105,10 @@ $brand-font-weight-desktop: $font-weight-base;
       list-style-type: none;
 
       a {
-        @include nav-button;
+        @include links.nav-button;
         margin: 0.5rem 0.5rem 0 0rem;
 
-        @include lg-up {
+        @include breakpoints.lg-up {
           margin: 0.5rem 0 0 0.5rem;
         }
 

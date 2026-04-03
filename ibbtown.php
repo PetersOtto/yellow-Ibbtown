@@ -2,7 +2,7 @@
 // Ibbtown is a theme for the Yellow CMS by datenstrom.
 
 class YellowIbbtown {
-    const VERSION = "0.9.3";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation

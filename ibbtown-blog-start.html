@@ -2,7 +2,7 @@
 <body id="page-top">
 <?php echo $this->yellow->page->getPage("header")->getContentHtml() ?>
 <?php $this->yellow->layout("navigation001") ?>
-<main class="<?php echo "layout-".$this->yellow->page->getHtml("layout") ?>">
+<main class="<?php echo "page layout-".$this->yellow->page->getHtml("layout") ?>">
 <?php $pages = $this->yellow->page->getPages("blog")->paginate($this->yellow->system->get("blogPaginationLimit")) ?>
 <?php $blogLocation = $this->yellow->page->location ?>
 <?php foreach ($pages as $page): ?>

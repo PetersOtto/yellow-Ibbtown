@@ -120,6 +120,10 @@ $markdown-spacing: container.$container-spacing;
         @include links.link-dark-main-text;
         color: $markdown-color-text;
         word-break: break-all;
+
+        @include breakpoints.sm-up {
+            word-break: keep-all;
+        }
     }
 
     // ---------- Lists ----------
@@ -362,6 +366,6 @@ $markdown-spacing: container.$container-spacing;
     }
 }
 
-.markdown{
+.markdown {
     @include markdown;
 }

@@ -48,12 +48,12 @@ footer#main-footer {
 
         .footer-wrapper {
             display: grid;
-
+            grid-template-columns: 1fr;
             @include breakpoints.lg-up {
                 grid-template-columns: 1fr 1fr;
             }
 
-            grid-template-columns: 1fr;
+            
 
             #footer-textarea {
                 li {

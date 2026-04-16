@@ -7,10 +7,11 @@
     \/_____/ \/___/   \/___/   \/__/\/___/  \/__//__/   \/_/\/_/
                                                                 
 +++++++++++++++++++++++++++++++++++++
-+ yellow-ibbtown                    +
++ yellow-ibbtown for                +
++ datenstrom-yellow                 +
 +++++++++++++++++++++++++++++++++++++
-+ Version: 0.9.4                    +
-+ 26/04/03                          +
++ Version: 0.9.5                    +
++ 26/04/16                          +
 +++++++++++++++++++++++++++++++++++++
 + Base Theme: Ibbtown               +
 +++++++++++++++++++++++++++++++++++++ 
@@ -19,6 +20,14 @@
 *******************
 Changelog
 *******************
+
+26/04/16 v0.9.5
+===============
+1) Some bugs fixed in:
+ - _footer001.scss, _error001.scss, _markdown.scss
+2) Create a override file for the edit extension.
+   My goal was to create a consistent look and feel for the editor that appears the same
+   in all themes, developed using the ibbtown theme. (https://github.com/PetersOtto/yellow-EditOverwrites)
 
 26/04/03 v0.9.4
 ===============

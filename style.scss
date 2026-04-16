@@ -8,10 +8,11 @@
 //     \/_____/ \/___/   \/___/   \/__/\/___/  \/__//__/   \/_/\/_/
                                                                 
 // +++++++++++++++++++++++++++++++++++++
-// + yellow-ibbtown                    +
+// + yellow-ibbtown for                +
+// + datenstrom-yellow                 +
 // +++++++++++++++++++++++++++++++++++++
-// + Version: 0.9.4                    +
-// + 26/04/03                          +
+// + Version: 0.9.5                    +
+// + 26/04/16                          +
 // +++++++++++++++++++++++++++++++++++++
 // + Base Theme: Ibbtown               +
 // +++++++++++++++++++++++++++++++++++++ 
@@ -21,7 +22,6 @@
 @use "importfiles/color001.scss";
 @use "importfiles/typo001.scss";
 @use "importfiles/links001.scss";
-@use "importfiles/yellow-editor.scss";
 @use "importfiles/markdown001.scss";
 @use "importfiles/navigation001.scss";
 @use "importfiles/pagination001.scss";
@@ -31,4 +31,4 @@
 @use "importfiles/tagnavi001.scss";
 @use "importfiles/blog-start001.scss";
 @use "importfiles/footer001.scss";
-@use "importfiles/error001.scss"; 
+@use "importfiles/error001.scss";
